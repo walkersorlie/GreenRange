@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/fonts/all.min.css') }}">
+{% endblock %}
+
+{% block content %}
+<nav class="fixed-top d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100%">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+    <span class="fs-4">Sidebar</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="#" class="nav-link active" aria-current="page">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+        Orders
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+        Products
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        Customers
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container px-4 py-5 my-5 text-center">
+    <h1 class="display-3 fw-bold">Green Range, LLC</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+        My name is Walker Sorlie, and I am the owner and operator of Green Range, LLC! Born and raised here in
+        Bend, Oregon, I have a deep-seated love of everything Bend has to offer, and as Bend continues to grow, I
+        want to provide <b>sustainable</b> and <b>economically-accessible</b> products for our food service industry.
+      </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="heroes-divider"></div>
+
+  <div class="container col-xxl-8 px-4 py-5 my-5">
+    <div class="row align-items-center g-5 py-5 rounded-3 border shadow-lg">
+      <h1 class="display-5 fw-bold text-center">What Do I Do?</h1>
+      <div class="col-10 col-sm-8 col-lg-6">
+        <div class="list-group lead" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-research-list" data-bs-toggle="list"
+             href="#list-research" role="tab" aria-controls="list-research">Research</a>
+          <a class="list-group-item list-group-item-action" id="list-ordering-list" data-bs-toggle="list"
+             href="#list-ordering" role="tab" aria-controls="list-ordering">Ordering</a>
+          <a class="list-group-item list-group-item-action" id="list-receiving-list" data-bs-toggle="list"
+             href="#list-receiving" role="tab" aria-controls="list-receiving">Receiving</a>
+          <a class="list-group-item list-group-item-action" id="list-storage-list" data-bs-toggle="list"
+             href="#list-storage" role="tab" aria-controls="list-storage">Storage</a>
+          <a class="list-group-item list-group-item-action" id="list-delivery-list" data-bs-toggle="list"
+             href="#list-delivery" role="tab" aria-controls="list-delivery">Delivery</a>
+          <a class="list-group-item list-group-item-action" id="list-problems-list" data-bs-toggle="list"
+             href="#list-problems" role="tab" aria-controls="list-problems">Problems</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="tab-content lead" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-research" role="tabpanel"
+               aria-labelledby="list-research-list">I find the best products and prices</div>
+          <div class="tab-pane fade" id="list-ordering" role="tabpanel" aria-labelledby="list-profile-list">I deal with suppliers and handle the physical act of ordering</div>
+          <div class="tab-pane fade" id="list-receiving" role="tabpanel" aria-labelledby="list-receiving-list">I receive product shipments</div>
+          <div class="tab-pane fade" id="list-storage" role="tabpanel" aria-labelledby="list-storage-list">I store and organize all products in my own space</div>
+          <div class="tab-pane fade" id="list-delivery" role="tabpanel" aria-labelledby="list-delivery-list">I deliver your products where you want, when you want</div>
+          <div class="tab-pane fade" id="list-problems" role="tabpanel" aria-labelledby="list-problems-list">I resolve all problems that may arise in this lifecycle, leaving you free you worry about one less thing and focus on your business</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
