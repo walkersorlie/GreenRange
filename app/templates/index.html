@@ -1,99 +1,273 @@
 {% extends "base.html" %}
 
 {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts/all.min.css') }}">
 {% endblock %}
 
 {% block content %}
-<nav class="fixed-top d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100%">
+<div id="pageTop"></div>
+
+<nav id="nav" class="fixed-top d-none d-xl-block d-flex flex-column flex-shrink-0 p-3 text-white primary-color"
+  style="width: 12%; height: 100%">
   <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-    <span class="fs-4">Sidebar</span>
+    <span class="fs-4">Green Range</span>
   </a>
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a href="#" class="nav-link active" aria-current="page">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-        Home
+      <a href="#about" class="nav-link text-white" aria-current="page">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#about"/></svg>
+        About
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-        Dashboard
+      <a href="#whatDoIDo" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#whatDoIDo"/></svg>
+        What Do I Do?
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-        Orders
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+      <a href="#products" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#products"/></svg>
         Products
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-        Customers
+      <a href="#contact" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#contact"/></svg>
+        Contact
       </a>
     </li>
   </ul>
 </nav>
 
-<main>
-  <div class="container px-4 py-5 my-5 text-center">
-    <h1 class="display-3 fw-bold">Green Range, LLC</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">
-        My name is Walker Sorlie, and I am the owner and operator of Green Range, LLC! Born and raised here in
-        Bend, Oregon, I have a deep-seated love of everything Bend has to offer, and as Bend continues to grow, I
-        want to provide <b>sustainable</b> and <b>economically-accessible</b> products for our food service industry.
+<div class="container px-4 py-5 my-5 text-center">
+  <h1 class="display-2 fw-bold">Green Range, LLC</h1>
+  <div class="col-lg-6 mx-auto">
+    <h4>Sustainable foodservice products</h4>
+  </div>
+</div>
+
+<div class="heroes-divider"></div>
+
+<div id="about" class="container col-xxl-8 px-4 py-5 my-5">
+  <div class="row align-items-center g-5 py-5 rounded-3 border shadow-lg">
+    <h1 class="display-5 fw-bold text-center border-bottom">About</h1>
+    <p class="lead mb-1">
+      My name is Walker Sorlie, and I am the owner and operator of Green Range, LLC! Born and raised here in
+      Bend, Oregon, I have a deep-seated love of everything Bend has to offer, and as Bend continues to grow, I
+      want to continue to provide <strong>sustainable</strong> and <strong>economically-accessible</strong>
+      products
+      for our food service industry.
+    </p>
+    <p class="lead mb-1">
+      Green Range, LLC (formerly Lave Edge, LLC) has operated for 14 years here in Central Oregon, so I have
+      long-lasting connections to local food establishments.
+    </p>
+  </div>
+</div>
+
+<div class="heroes-divider"></div>
+
+<div id="whatDoIDo" class="container col-xxl-8 px-4 py-5 my-5">
+  <div class="row align-items-center g-5 py-5 rounded-3 border shadow-lg">
+    <h1 class="display-5 fw-bold text-center border-bottom">What Do I Do?</h1>
+    <p class="lead text-center">
+      I manage the entire lifecycle of your inventory and ordering needs! I purchase the products you want, store
+      them in my own personal storage space, and I deliver them according to your schedule and needs.
+    </p>
+    <div class="col-10 col-sm-8 col-lg-6">
+      <div class="list-group lead" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-research-list" data-bs-toggle="list"
+          href="#list-research" role="tab" aria-controls="list-research">Research</a>
+        <a class="list-group-item list-group-item-action" id="list-ordering-list" data-bs-toggle="list"
+          href="#list-ordering" role="tab" aria-controls="list-ordering">Ordering</a>
+        <a class="list-group-item list-group-item-action" id="list-receiving-list" data-bs-toggle="list"
+          href="#list-receiving" role="tab" aria-controls="list-receiving">Receiving</a>
+        <a class="list-group-item list-group-item-action" id="list-storage-list" data-bs-toggle="list"
+          href="#list-storage" role="tab" aria-controls="list-storage">Storage</a>
+        <a class="list-group-item list-group-item-action" id="list-delivery-list" data-bs-toggle="list"
+          href="#list-delivery" role="tab" aria-controls="list-delivery">Delivery</a>
+        <a class="list-group-item list-group-item-action" id="list-problems-list" data-bs-toggle="list"
+          href="#list-problems" role="tab" aria-controls="list-problems">Problem Resolving</a>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="tab-content lead" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-research" role="tabpanel"
+          aria-labelledby="list-research-list">I keep up-to-date on the latest compostable products and always
+          take the time to find you the best price</div>
+        <div class="tab-pane fade" id="list-ordering" role="tabpanel" aria-labelledby="list-profile-list">I make
+          purchase orders and interact with suppliers and distributors so you don't have to</div>
+        <div class="tab-pane fade" id="list-receiving" role="tabpanel" aria-labelledby="list-receiving-list">I
+          receive products shipments and check that everything arrived in good condition.</div>
+        <div class="tab-pane fade" id="list-storage" role="tabpanel" aria-labelledby="list-storage-list">I
+          warehouse and store all of the products so you don't have to try and find space to fit that fifth box of
+          cups</div>
+        <div class="tab-pane fade" id="list-delivery" role="tabpanel" aria-labelledby="list-delivery-list">I
+          deliver the products you desire on your schedule. So whenever you make an order, I can deliver that day,
+          the next day, or whenever you'd like</div>
+        <div class="tab-pane fade" id="list-problems" role="tabpanel" aria-labelledby="list-problems-list">I resolve all
+          problems that may arise in this entire warehouseing lifecycle:
+          <ul>
+            <li>Damaged product: Handle getting replacements</li>
+            <li>Incorrect items sent: Handle getting correct items shipped</li>
+            <li>Items out of stock: Find suitable interim replacement items</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="heroes-divider"></div>
+
+<div id="products" class="container col-xxl-8 px-4 py-5 my-5">
+  <div class="row align-items-center g-5 py-5 rounded-3 border shadow-lg">
+    <h1 class="display-5 fw-bold text-center border-bottom">Some of the Products I Offer</h1>
+    <p class="lead">I offer a range of products, from cups and lids, to cutlery and napkins, to thermal register
+      paper and toilet paper. And remember, <strong>everything is compostable</strong> (or made from recycled material
+      when not
+      compostable).</p>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
+          <img src="{{ url_for('static', filename='img/hot-cup.png') }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Hot cups</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
+          <img src="{{ url_for('static', filename='img/hot-lid.png') }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Lids for hot cups</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
+          <img src="{{ url_for('static', filename='img/cold-cup.png') }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Cold cups</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
+          <img src="{{ url_for('static', filename='img/cold-lid.png') }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Lids for cold cup</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
+          <img src="{{ url_for('static', filename='img/straw.png') }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Straws</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
+          <img src="{{ url_for('static', filename='img/fork.png') }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Cutlery</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="contact" class="container col-xxl-8 px-4 py-5 my-5">
+  <div class="g-5 py-5 rounded-3 border shadow-lg">
+    <div class="row">
+      <h1 class="display-5 fw-bold text-center">Contact Me for Inquiries</h1>
+      <p class="lead text-center">
+        Please fill our this form or contact me directly at <a href="mailto:walker@greenrangeproducts.com">walker@greenrangeproducts.com</a>.
       </p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-      </div>
     </div>
-  </div>
-
-  <div class="heroes-divider"></div>
-
-  <div class="container col-xxl-8 px-4 py-5 my-5">
-    <div class="row align-items-center g-5 py-5 rounded-3 border shadow-lg">
-      <h1 class="display-5 fw-bold text-center">What Do I Do?</h1>
-      <div class="col-10 col-sm-8 col-lg-6">
-        <div class="list-group lead" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action active" id="list-research-list" data-bs-toggle="list"
-             href="#list-research" role="tab" aria-controls="list-research">Research</a>
-          <a class="list-group-item list-group-item-action" id="list-ordering-list" data-bs-toggle="list"
-             href="#list-ordering" role="tab" aria-controls="list-ordering">Ordering</a>
-          <a class="list-group-item list-group-item-action" id="list-receiving-list" data-bs-toggle="list"
-             href="#list-receiving" role="tab" aria-controls="list-receiving">Receiving</a>
-          <a class="list-group-item list-group-item-action" id="list-storage-list" data-bs-toggle="list"
-             href="#list-storage" role="tab" aria-controls="list-storage">Storage</a>
-          <a class="list-group-item list-group-item-action" id="list-delivery-list" data-bs-toggle="list"
-             href="#list-delivery" role="tab" aria-controls="list-delivery">Delivery</a>
-          <a class="list-group-item list-group-item-action" id="list-problems-list" data-bs-toggle="list"
-             href="#list-problems" role="tab" aria-controls="list-problems">Problems</a>
+    <form id="contactForm" action="{{ url_for('route.index') }}" method="post">
+      {{ form.csrf_token }}
+      <div class="row justify-content-center">
+        <div class="col-4 mb-3">
+          {{ form.name.label(class_="form-label") }}
+          {{ form.name(class_="form-control") }}
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="tab-content lead" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="list-research" role="tabpanel"
-               aria-labelledby="list-research-list">I find the best products and prices</div>
-          <div class="tab-pane fade" id="list-ordering" role="tabpanel" aria-labelledby="list-profile-list">I deal with suppliers and handle the physical act of ordering</div>
-          <div class="tab-pane fade" id="list-receiving" role="tabpanel" aria-labelledby="list-receiving-list">I receive product shipments</div>
-          <div class="tab-pane fade" id="list-storage" role="tabpanel" aria-labelledby="list-storage-list">I store and organize all products in my own space</div>
-          <div class="tab-pane fade" id="list-delivery" role="tabpanel" aria-labelledby="list-delivery-list">I deliver your products where you want, when you want</div>
-          <div class="tab-pane fade" id="list-problems" role="tabpanel" aria-labelledby="list-problems-list">I resolve all problems that may arise in this lifecycle, leaving you free you worry about one less thing and focus on your business</div>
+      <div class="row justify-content-center">
+        <div class="col-4 mb-3">
+          {{ form.company.label(class_="form-label") }}
+          {{ form.company(class_="form-control") }}
         </div>
       </div>
+      <div class="row justify-content-center">
+        <div class="col-4 mb-3">
+          {{ form.email.label(class_="form-label") }}
+          {{ form.email(class_="form-control") }}
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6 mb-3">
+          {{ form.question.label(class_="form-label") }}
+          {{ form.question(class_="form-control") }}
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-4 mb-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    <div class="row text-center">
+      <div id="contactFormSubmitted" style="display: none;">
+        <p class="lead">
+          You have submitted your contact request.
+        </p>
+      </div>
     </div>
+
+<!--    <form action="{{ url_for('route.submit_contact_form') }}" method="post">-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-4 mb-3">-->
+<!--          <label for="name" class="form-label">Name</label>-->
+<!--          <input type="text" name="name" class="form-control">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-4 mb-3">-->
+<!--          <label for="formCompany" class="form-label">Company</label>-->
+<!--          <input type="text" name="company" id="formCompany" class="form-control">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-4 mb-3">-->
+<!--          <label for="formEmail" class="form-label">Email address</label>-->
+<!--          <input type="email" name="email" id="formEmail" class="form-control" placeholder="name@email.com"-->
+<!--            aria-describedby="formEmailDesc">-->
+<!--          <div id="formEmailDesc" class="form-text">I'll never share your email with anyone</div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-6 mb-3">-->
+<!--          <label for="formQuestion" class="form-label">Questions?</label>-->
+<!--          <textarea name="question" class="form-control" id="formQuestion" rows="4"></textarea>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-4 mb-3">-->
+<!--          <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </form>-->
   </div>
-</main>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}

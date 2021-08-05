@@ -1,0 +1,36 @@
+body {
+  position: relative;
+}
+
+.background-secondary {
+  background-color: #E1E2D7;
+}
+
+#topBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 35px; /* Place the button at the bottom of the page */
+  right: 60px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+}
+
+.primary-color {
+  background-color: #225807;
+}
+
+a.list-group-item.active {
+  background-color: #252431;
+  border-color: black;
+  border-radius: .25rem;
+}
+
+a.nav-link.active {
+  background-color: #E1E2D7 !important;
+  color: black !important;
+}
+
+.card-color {
+  background-color: #252431;
+}
