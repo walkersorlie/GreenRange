@@ -1,6 +1,6 @@
+import sendgrid
+from sendgrid.helpers.mail import Mail, Email, To, Content
 from flask import Blueprint, render_template, request, jsonify, make_response, current_app as app
-from flask_mail import Message
-from app import mail
 from app.forms.contact_form import ContactForm
 
 
@@ -20,15 +20,18 @@ def index():
             email = form.email.data
             question = request.form['question']
 
+            sg = sendgrid.SendGridAPIClient(api_key=app.config['SENDGRID_API_KEY'])
+            from_email = Email('contact-me@greenrangeproducts.com')
+            to_email = To('walker@greenrangeproducts.com')
             company = company if company else 'NO_COMPANY_PROVIDED'
             body = question if question else 'NO_QUESTION_PROVIDED'
-            msg = Message(
-                subject=f"'{name}' from '{company}' has requested information",
-                sender='contact-me@greenrangeproducts.com',
-                recipients=['walker@greenrangeproducts.com'],
-                body = body
-            )
-            mail.send(msg)
+            subject = f"'{name}' from '{company}' has requested information"
+            content = Content("text/plain", body)
+            mail = Mail(from_email, to_email, subject, content)
+
+            mail_json = mail.get()
+            response = sg.client.mail.send.post(request_body=mail_json)
+
 
             return make_response(jsonify({'message': 'Successfully submitted'}), 200)
         else:

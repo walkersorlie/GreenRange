@@ -1,7 +1,6 @@
 import os
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
-from flask_mail import Mail
 
 
 def access_secrets():
@@ -11,8 +10,7 @@ def access_secrets():
 
     secrets = {
         'secret_key': 'projects/123181321826/secrets/SECRET_KEY/versions/latest',
-        'mail_username': 'projects/123181321826/secrets/MAIL_USERNAME/versions/latest',
-        'mail_password': 'projects/123181321826/secrets/MAIL_PASSWORD/versions/latest'
+        'sendgrid_api_key': 'projects/123181321826/secrets/SENDGRID_API_KEY/versions/latest'
     }
 
     ret = {}
@@ -25,7 +23,6 @@ def access_secrets():
 
 
 csrf = CSRFProtect()
-mail = Mail()
 
 def create_app(testing=False):
     app = Flask(__name__)
@@ -36,15 +33,14 @@ def create_app(testing=False):
 
     if flask_env == 'production':
         secrets = access_secrets()
-        app.config.from_object(
-            config.ProductionConfig(mail_username=secrets['mail_username'], mail_password=secrets['mail_password'])
-        )
+        app.config.from_object(config.ProductionConfig)
 
         app.config['SECRET_KEY'] = secrets['secret_key']
+        app.config['SENDGRID_API_KEY'] = secrets['sendgrid_api_key']
 
     else:
-        # load secret key
         app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', None)
+        app.config['SENDGRID_API_KEY'] = os.getenv('SENDGRID_API_KEY')
 
         if testing or flask_env == 'testing':
             app.config.from_object(config.TestingConfig)
@@ -53,9 +49,6 @@ def create_app(testing=False):
 
     # init CSRF protection
     csrf.init_app(app)
-
-    # init mail backend
-    mail.init_app(app)
 
     # Import and register blueprints
     from app.routes import route
