@@ -9,13 +9,14 @@
 <div id="pageTop"></div>
 
 <div id="nav">
-  <nav class="fixed-top d-none d-xl-block d-flex flex-column flex-shrink-0 p-3 text-white primary-color"
+  <nav
+    class="fixed-top d-none d-xl-block p-3 text-white primary-color"
   style="width: 12%; height: 100%">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-    <span class="fs-4">Green Range</span>
-  </a>
-  <hr>
-  <ul class="nav nav-pills flex-column mb-auto">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-4">Green Range</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
       <a href="#about" class="nav-link text-white" aria-current="page">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#about"/></svg>
@@ -25,13 +26,7 @@
     <li>
       <a href="#whatDoIDo" class="nav-link text-white">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#whatDoIDo"/></svg>
-        What Do I Do?
-      </a>
-    </li>
-    <li>
-      <a href="#products" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#products"/></svg>
-        Products
+        Service
       </a>
     </li>
     <li>
@@ -41,7 +36,7 @@
       </a>
     </li>
   </ul>
-</nav>
+  </nav>
 </div>
 
 <div class="container px-4 py-5 my-5 text-center">
@@ -74,7 +69,7 @@
       I manage the entire lifecycle of your inventory and ordering needs! I purchase the products you want, store
       them in my own personal storage space, and I deliver them according to your schedule and needs.
     </p>
-    <div class="col-10 col-sm-8 col-lg-6">
+    <div class="col-10 col-sm-8 col-lg-6 list-group">
       <div class="list-group lead" id="list-tab" role="tablist">
         <a class="list-group-item list-group-item-action active" id="list-research-list" data-bs-toggle="list"
           href="#list-research" role="tab" aria-controls="list-research">Research</a>
@@ -119,66 +114,6 @@
 </div>
 
 <div class="heroes-divider"></div>
-
-<div id="products" class="container col-xxl-8 px-4 py-5 my-5">
-  <div class="row align-items-center g-5 py-5 rounded-3 border shadow-lg">
-    <h1 class="display-5 fw-bold text-center border-bottom">Some of the Products I Offer</h1>
-    <p class="lead">I offer a range of products, from cups and lids, to cutlery and napkins, to thermal register
-      paper and toilet paper. And remember, <strong>everything is compostable</strong> (or made from recycled material
-      when not
-      compostable).</p>
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div class="col">
-        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
-          <img src="{{ url_for('static', filename='img/hot-cup.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Hot cups</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
-          <img src="{{ url_for('static', filename='img/hot-lid.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Lids for hot cups</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
-          <img src="{{ url_for('static', filename='img/cold-cup.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Cold cups</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
-          <img src="{{ url_for('static', filename='img/cold-lid.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Lids for cold cup</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
-          <img src="{{ url_for('static', filename='img/straw.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Straws</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 text-white card-color rounded-5 shadow-lg">
-          <img src="{{ url_for('static', filename='img/fork.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Cutlery</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div id="contact" class="container col-xxl-8 px-4 py-5 my-5">
   <div class="g-5 py-5 rounded-3 border shadow-lg">

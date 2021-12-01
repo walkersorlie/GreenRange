@@ -16,6 +16,14 @@ body {
   padding: 15px; /* Some padding */
 }
 
+@media screen and (max width: 768px) {
+  #topBtn {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: .2rem;
+  }
+}
+
 .primary-color {
   background-color: #225807;
 }
