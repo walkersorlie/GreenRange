@@ -1,0 +1,73 @@
+const functions = require("firebase-functions");
+
+
+//const { SecretManagerServiceClient } = require("@google-cloud/secret-manager");
+//const client = new SecretManagerServiceClient();
+//
+//async function getSecret(secretName) {
+//  try {
+//    const secrets = await client.listSecrets({
+//      parent: 'projects/123181321826',
+//    });
+//    console.info(secrets.payload);
+//    return secrets.payload;
+//
+//    const secret = await client.accessSecretVersion({
+//      name: `projects/123181321826/secrets/${secretName}/versions/latest`,
+//    });
+//    console.info(secret.payload);
+//    const payload = secret.payload.data.toString("utf8");
+//    console.info(`Payload: ${payload}`);
+//    return secret.payload;
+//  } catch (err) {
+//    console.error(err);
+//  }
+//};
+//
+//
+//exports.testSecret = functions.https.onRequest((req, res) => {
+//  const key = getSecret("SENDGRID_API_KEY");
+//  res.status(200).send(key);
+//})
+
+
+const sgMail = require("@sendgrid/mail");
+const cors = require("cors")({
+});
+
+const whitelist = ['https://greenrangeproducts.com', 'greenrangeproducts.com'];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+};
+
+exports.contactMeEmail = functions.https.onRequest((req, res) => {
+  const sendgridKey = getSecret("SENDGRID_API_KEY");
+  const { name, email, company, question } = req.body;
+  return cors(corsOptions) (req, res, () => {
+    sgMail.setApiKey(sendgridKey);
+    const fromCompany = (company) ? company : 'NO_COMPANY_PROVIDED';
+    const body = (question) ? question : 'NO_QUESTION_PROVIDED';
+    subject = "'" + name + "'" + " from " + fromCompany + " has requested information";
+    const msg = {
+      to: "contact-me@greenrangeproducts.com",
+      from: "contact-me@greenrangeproducts.com",
+      subject: subject,
+      text: body,
+    };
+    console.log(msg);
+    sgMail.send(msg);
+
+    sgMail.send(msg).then(() => {
+          res.status(200).send('Email sent');
+        }).catch((error) => {
+          res.status(500).send(error);
+        })
+  });
+});
