@@ -1,0 +1,3 @@
+[submodule "themes/greenrange-hugo-story-fork"]
+	path = themes/greenrange-hugo-story-fork
+	url = https://github.com/walkersorlie/greenrange-hugo-story-fork.git

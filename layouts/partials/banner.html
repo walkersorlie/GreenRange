@@ -1,0 +1,11 @@
+<!-- Banner -->
+<section class="banner {{ .style }}">
+    <div class="content">
+        {{ with .title }}<h1>{{ . }}</h1>{{ end }}
+        {{ with .subtitle }}<p class="major">{{ . | safeHTML }}</p>{{ end }}
+        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
+    </div>
+    {{ with .image }}<div class="image">
+        <img src="{{ .src }}" alt="{{ .alt }}" />
+    </div>{{end}}
+</section>

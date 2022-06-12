@@ -1,0 +1,31 @@
+## -----------------------------------------------
+## Basic Configuration
+## -----------------------------------------------
+
+baseURL = 'http://greenrangeproducts.com/'
+languageCode = 'en-us'
+title = "Green Range, LLC"
+theme = "greenrange-hugo-story-fork"
+
+
+## -----------------------------------------------
+## Hugo Built-in Features
+## -----------------------------------------------
+
+disableKinds = ["taxonomy", "taxonomyTerm", "section"]
+googleAnalytics = "G-C75KB5LZ6K"
+
+
+## -----------------------------------------------
+## Site Parameters
+## -----------------------------------------------
+
+[Params]
+  description = "Local supplier of foodservice disposable products, specializing in small foodservice establishments"
+  logo = "img/banner.jpg"
+  favicon = false
+
+[Params.social]
+  email = "contact-me@greenrangeproducts.com"
+  linkedin = "https://linkedin.com/in/walkersorlie/"
+  phone = "4582927355"

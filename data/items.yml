@@ -1,0 +1,28 @@
+title : "My Service"
+content: |
+  I manage the entire lifecycle of your inventory and ordering needs! I purchase the products you need, store them in my storage space, and deliver them according to your schedule and needs.
+style: "style2 big onscroll-fade-in"
+items:
+  # feature item loop
+  - name : "Research"
+    content : "I keep up-to-date on the latest product pricing and always take the time to find the best quality and price"
+    style : "style2 major fa-browser"
+
+  # feature item loop
+  - name : "Ordering"
+    content : "I handle all purchase orders so you don't have to go to the store or deal with suppliers"
+    style : "solid style2 major fa-phone"
+    
+  # feature item loop
+  - name : "Storage"
+    content : "I receive and store all products so you don't have to devote valuable kitchen space to storing disposable containers"
+    style : "solid style2 major fa-container-storage"
+    
+  # feature item loop
+  - name : "Deliver"
+    content : "I deliver the products you request on your schedule: I deliver when you want and where you want"
+    style : "solid style2 major fa-truck-loading"
+  
+  - name: "Flexibility"
+    content: "I am a one-man show, which means I am much more flexible than any other foodservice delivery business. If you want a specific item I can do the research and find the best price. No order minimums, no quantity minimums (i.e. you don't have to order a full case if you don't want too), and the best personal service in Central Oregon"
+    style: "style2 major fa-exchange"

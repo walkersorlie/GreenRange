@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+	{{ partial "banner.html" site.Data.banner }}
+	
+	<div class="divider"></div>
+	{{ partial "spotlight" site.Data.spotlight1 }}
+	{{ partial "spotlight" site.Data.spotlight2 }}
+	
+	<div class="divider"></div>
+	{{ partial "items.html" site.Data.items }}
+	
+	<div class="divider"></div>
+	{{ partial "form.html" }}
+	
+	{{ partial "template/footer.html" . }}
+
+{{ end }}

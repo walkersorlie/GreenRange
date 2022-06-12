@@ -1,0 +1,7 @@
+####################### Spotlight #########################
+style: "style1 orient-right content-align-left image-position-center onscroll-content-fade-left onscroll-image-fade-in color7"
+id: "first"
+title : "Highest Quality Disposables at the Best Price"
+content: |
+  High quality and generally compostable, you get the best products at the best price
+image: {src: "img/spotlight1_edited.jpg", alt: "Disposable to-go boxes"}

@@ -1,0 +1,7 @@
+####################### Spotlight #########################
+style: "style1 orient-left content-align-left image-position-center onscroll-content-fade-right onscroll-image-fade-in"
+id: "second"
+title : "Foodservice Disposable Delivered Directly to You"
+content: |
+  No more trips to the restaurant supply store
+image: {src: "img/spotlight2_edited.jpg", alt: "Delivery boxes"}

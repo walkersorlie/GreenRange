@@ -1,0 +1,7 @@
+####################### Banner #########################
+style: "style5 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right"
+title: "Green Range, LLC"
+subtitle: |
+  Specializing in supplying foodservice disposables to small food and beverage establishments in Central Oregon
+
+image: {src: "img/banner_edited.jpg", alt: "Trees"}
