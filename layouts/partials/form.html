@@ -5,8 +5,13 @@
 		</header>
 		<p>If you would like to contact me, please fill out this form or you can contact me directly at <u>contact-me@greenrangeproducts.com</u>
 		<div class="content">
-			<form id="contactForm" name="contact" method="post" data-netlify="true">
+			<form id="contactForm" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
 				<div class="fields">
+					<p class="hidden">
+						<label>
+						  Don’t fill this out if you’re human: <input name="bot-field" />
+						</label>
+					</p>
 					<div class="field half">
 						<label for="name">Name</label>
 						<input type="text" name="name" id="name" value="" />
@@ -19,14 +24,8 @@
 						<label for="message">Message</label>
 						<textarea name="message" id="message" rows="6"></textarea>
 					</div>
-					<div class="field">
-						<input type="checkbox" id="checkbox" name="checkbox" />
-						<label for="checkbox">I am a human and not a robot</label>
-					</div>
 				</div>
-				<ul class="actions">
-					<li><input type="button" name="submit" id="submit" onClick="handleSubmit()" value="Send Message" /></li>
-				</ul>
+				<input type="button" name="submit" id="submit" onClick="handleSubmit()" value="Send Message" /></li>
 			</form>
 		</div>
 	</div>
