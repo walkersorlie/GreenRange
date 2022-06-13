@@ -1,3 +1,7 @@
+{{ if .Params.noindex }}
+	<meta name="robots" content="noindex" /> 
+{{ end }}
+
 <link href="{{ "css/custom.css" | relURL }}?{{ now.Unix }}" rel="stylesheet">
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

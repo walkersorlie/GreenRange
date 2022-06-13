@@ -14,6 +14,10 @@ theme = "greenrange-hugo-story-fork"
 
 disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 googleAnalytics = "G-C75KB5LZ6K"
+enableRobotsTXT = true
+
+[sitemap]
+  filename = "sitemap.xml"
 
 
 ## -----------------------------------------------
@@ -22,6 +26,7 @@ googleAnalytics = "G-C75KB5LZ6K"
 
 [Params]
   description = "Local supplier of foodservice disposable products, specializing in small foodservice establishments"
+  author = "Walker Sorlie"
   logo = "img/banner.jpg"
   favicon = false
 
@@ -29,3 +34,6 @@ googleAnalytics = "G-C75KB5LZ6K"
   email = "contact-me@greenrangeproducts.com"
   linkedin = "https://linkedin.com/in/walkersorlie/"
   phone = "4582927355"
+  
+[Params.meta]
+  
