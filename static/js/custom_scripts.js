@@ -8,8 +8,8 @@ function handleSubmit() {
     body: new URLSearchParams(formData).toString(),
   })
     .then(() => {
-		
-		console.log("Form successfully submitted")
+		document.getElementById("formSubmitSuccess").style.display = 'block';
+		console.log("Form successfully submitted");
 	})
     .catch((error) => alert(error));
 };

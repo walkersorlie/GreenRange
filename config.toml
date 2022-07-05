@@ -2,7 +2,7 @@
 ## Basic Configuration
 ## -----------------------------------------------
 
-baseURL = 'http://greenrangeproducts.com/'
+baseURL = 'https://greenrangeproducts.com/'
 languageCode = 'en-us'
 title = "Green Range, LLC"
 theme = "greenrange-hugo-story-fork"
