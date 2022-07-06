@@ -1,37 +1,48 @@
 <section class="wrapper style1 align-center">
-	<div class="inner">
+	<div class="container pt-2">
 		<header>
 			<h2>Contact Me</h2>
 		</header>
-		<p>If you would like to contact me, please fill out this form or you can contact me directly at <u>contact-me@greenrangeproducts.com</u>
+		<p class="lead">If you would like to contact me, please fill out this form.</u>
 		<div id="formSubmitSuccess" class="hidden">
-			<p>Your request was submitted successfully!</p>
+			<p><strong>Your request was submitted successfully! I will be in touch with you soon.</strong></p>
 		</div>
 		<div class="content">
-			<form id="contactForm" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
-				<div class="fields">
-					<p class="hidden">
-						<label>
-						  Don’t fill this out if you’re human: <input name="bot-field" />
-						</label>
-					</p>
-					<div class="field half">
-						<label for="name">Name</label>
-						<input type="text" name="name" id="name" value="" />
-					</div>
-					<div class="field half">
-						<label for="email">Email</label>
-						<input type="email" name="email" id="email" value="" />
-					</div>
-					<div class="field">
-						<label for="message">Message</label>
-						<textarea name="message" id="message" rows="6"></textarea>
+			<form id="contactForm" class="needs-validation" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+				<p class="hidden">
+					<label>
+					  Don’t fill this out if you’re human: <input name="bot-field" />
+					</label>
+				</p>
+				<div class="row justify-content-center">
+					<div class="col-md-6">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="nameInput" placeholder="" required>
+							<label for="nameInput">Name</label>
+							<div class="invalid-feedback">Please enter your name</div>
+						</div>	
 					</div>
 				</div>
-				<input type="button" name="submit" id="submit" onClick="handleSubmit()" value="Send Message" /></li>
+				<div class="row justify-content-center">
+					<div class="col-md-6">
+						<div class="form-floating mb-3">
+							<input type="email" class="form-control" id="emailInput" placeholder="" required>
+							<label for="emailInput">Email Address</label>
+							<div class="invalid-feedback">Please enter your email address</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-md-6">
+						<div class="form-floating mb-3">
+							<textarea class="form-control" id="messageInput" placeholder="" style="height:200px" required></textarea>
+							<label for="messageInput">Ask me anything!</label>	
+							<div class="invalid-feedback">Please enter your message</div>
+						</div>
+					</div>
+				</div>
+				<input type="button" id="submitButton" value="Send Message">
 			</form>
 		</div>
-		<div id="contactRequestInfo" class="hidden">
-			<p>Your contact request was submitted! I will be in touch with you soon.</p>
 	</div>
 </section>
