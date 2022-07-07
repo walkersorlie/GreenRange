@@ -1,11 +1,17 @@
 
 {{ define "main"}}
     <main id="main">
-		<section class="wrapper style1 align-center">
-			<div class="inner">
-				<h1>404 Error: Page not found</h1>
-				<input type="button" id="submit" onClick="location.href={{ "/" | relURL }};" value="Go Home" /></li>
+		{{ with .Site.Data.banner }}
+			<div style="background-image: url({{.image.src}}); height: 100vh;">
+				<div class="container">
+					<div class="p-4 rounded-3">
+						<div class="container-fluid py-5">
+							<h2 class="display-5 fw-bold">Oopsie doodles! Looks like this page doesn't exist!</h2>
+							<input type="button" id="submit" onClick="location.href={{ "/" | relURL }};" value="Go Back Home" />
+						</div>
+					</div>
+				</div>
 			</div>
-		</section>
+		{{ end }}
     </main>
 {{ end }}
